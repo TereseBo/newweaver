@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { WeaveContext } from '@/app/resources/contexts/weavecontext'
 
-import { createWeaveObject } from './functions/get/createWeaveObject'
+import { createWeaveObject } from '../../weaveObjHandler/get/createWeaveObject'
 
 export function Downloadweave() {
     const { treadleGrid, tieUpGrid, warpGrid } = useContext(WeaveContext) as WeaveContextType

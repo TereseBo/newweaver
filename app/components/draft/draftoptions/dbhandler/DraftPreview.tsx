@@ -4,23 +4,23 @@ import './draftpreview.scss';
 import { useEffect, useState } from 'react'
 
 import { Grid } from '@/app/components/draft/draft/Grid'
-import { readWeaveObject } from '@/app/components/draft/filehandler/functions/set/readWeaveObject'
+import { readWeaveObject } from '@/app/components/draft/weaveObjHandler/set/readWeaveObject'
 
 
-export function DraftPreview(params:{weaveObj:WeaveObject}) {
-  
-    const [previewGrid, setPreviewGrid] = useState<grid>(new Array(10).fill(new Array(10).fill('', 0)))
-    const {weaveObj}=params
+export function DraftPreview(params: { weaveObj: WeaveObject }) {
+
+  const [previewGrid, setPreviewGrid] = useState<grid>(new Array(10).fill(new Array(10).fill('', 0)))
+  const { weaveObj } = params
 
   useEffect(() => {
     //Create grids for reading the weave¨
-    let shafts= weaveObj.shafts.count || 0
+    let shafts = weaveObj.shafts.count || 0
     let newGrids = readWeaveObject(params.weaveObj)
 
     //Trim since preview cant contain the full width
-    let shortTreadleGrid= newGrids.treadleGrid.slice(-11,-1)
-    let shortWarpGrid= newGrids.warpGrid.map(row=>{return row.slice(-11,-1)})
-    let tieUpGrid=newGrids.tieupGrid
+    let shortTreadleGrid = newGrids.treadleGrid.slice(-11, -1)
+    let shortWarpGrid = newGrids.warpGrid.map(row => { return row.slice(-11, -1) })
+    let tieUpGrid = newGrids.tieupGrid
 
     //Returns the color if present for the beat
     function getWeftColor(y: number) {
@@ -112,7 +112,7 @@ export function DraftPreview(params:{weaveObj:WeaveObject}) {
 
   return (
     <div className="preview-container">
-    <Grid content={previewGrid} type='preview' />
+      <Grid content={previewGrid} type='preview' />
     </div>
   )
 

@@ -5,7 +5,7 @@ import { useAuth } from '@clerk/nextjs'
 
 import { DraftList } from '@/app/resources/types/dbdocuments'
 
-import { DraftSelection } from '../draftoptions/DraftSelection'
+import { DraftSelection } from '../DraftSelection'
 
 export function DbLoadWeave() {
 
@@ -37,7 +37,7 @@ export function DbLoadWeave() {
 
     return (
         <>
-            {visibleDraftList ? <DraftSelection userDrafts={userDrafts} setVisibility={setVisibleDraftList}/> : null}
+            {visibleDraftList ? <DraftSelection userDrafts={userDrafts} setVisibility={setVisibleDraftList} /> : null}
 
             <button id="uploadButton" onClick={collectUserWeaves}>Load
             </button>

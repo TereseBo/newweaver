@@ -1,9 +1,9 @@
 //This component renders a list of drafts from the DB, including a generated preview.
 import './draftselection.scss' //The styling is heavy on this component in order to render as desired
 
-import { useContext} from 'react'
+import { useContext } from 'react'
 
-import { DraftPreview } from '@/app/components/draft/dbhandler/DraftPreview'
+import { DraftPreview } from '@/app/components/draft/draftoptions/dbhandler/DraftPreview'
 import { WeaveContext } from '@/app/resources/contexts/weavecontext'
 import { DraftList } from '@/app/resources/types/dbdocuments'
 

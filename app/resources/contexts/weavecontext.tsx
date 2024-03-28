@@ -2,7 +2,7 @@
 //dependencies
 import { createContext, useEffect, useState } from 'react'
 
-import { readWeaveObject } from '@/app/components/draft/filehandler/functions/set/readWeaveObject'
+import { readWeaveObject } from '@/app/components/draft/weaveObjHandler/set/readWeaveObject'
 import { defaultColor, defaultDraftHeight, defaultDraftWidth, defaultShafts, defaultTreadles } from '@/app/resources/constants/weaveDefaults'
 import { resizeGrid } from '@/app/resources/functions/resizeGrid'
 //exports
@@ -120,7 +120,7 @@ export function WeaveProvider({ children }: { children: React.ReactElement | Rea
     updateGrid('tieup', newGrids.tieupGrid)
     updateGrid('warp', newGrids.warpGrid)
     updateGrid('weft', newGrids.treadleGrid)
-}
+  }
 
   //Changes content of grid-array depending on cell-id
   function updateCell(cellId: string) {

@@ -6,7 +6,7 @@ import { useContext, useState } from 'react'
 import { WeaveContext } from '@/app/resources/contexts/weavecontext'
 import { toggleBool } from '@/app/resources/functions/toggleBool'
 
-import { readWeaveObject } from './functions/set/readWeaveObject'
+import { readWeaveObject } from '../../weaveObjHandler/set/readWeaveObject'
 
 export function Uploadweave() {
     const { updateGrid } = useContext(WeaveContext) as WeaveContextType

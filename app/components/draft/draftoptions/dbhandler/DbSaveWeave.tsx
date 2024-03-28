@@ -3,13 +3,13 @@
 import { useContext } from 'react'
 import { useAuth } from '@clerk/nextjs'
 
-import { createWeaveObject } from '@/app/components/draft/filehandler/functions/get/createWeaveObject'
+import { createWeaveObject } from '@/app/components/draft/weaveObjHandler/get/createWeaveObject'
 import { WeaveContext } from '@/app/resources/contexts/weavecontext'
 
 export function DbSaveWeave() {
     const { treadleGrid, tieUpGrid, warpGrid } = useContext(WeaveContext) as WeaveContextType
 
-//TODO: Add validation to ensure empty draft is not saved
+    //TODO: Add validation to ensure empty draft is not saved
 
     const { userId } = useAuth()
 
@@ -27,9 +27,9 @@ export function DbSaveWeave() {
         }).then(function (response) {
             console.log(response)
             if (response.status == 201) {
-                console.log('sucsess', response)
-            }else{
-            alert('Ops, the draft could not be saved')
+                alert('Draft saved!')
+            } else {
+                alert('Ops, the draft could not be saved')
             }
         })
     }
