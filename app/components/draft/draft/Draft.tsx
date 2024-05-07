@@ -16,15 +16,19 @@ export function Draft() {
         initiateGrids()
     })
 
+    
+
     return (
         (treadleGrid && tieUpGrid && warpGrid) ? (
             <div className="draft">
                 <div className="partial">
-                    <Weave /> <Grid content={treadleGrid} type='treadle' />
+                    <Weave /> <Grid content={treadleGrid} type='treadle' /> <div className='treadlebutton-container'><button >+</button><button >-</button></div>
                 </div>
                 <div className="partial">
-                    <Grid content={warpGrid} type='warp' /> <Grid content={tieUpGrid} type='tieup' />
+                    <Grid content={warpGrid} type='warp' /> <Grid content={tieUpGrid} type='tieup' /><button className='aligner'>+</button>
                 </div>
+               
+                <div className='treadlebutton-container'><button >+</button><button >-</button></div>
             </div>) : (<Errormsg text='Ooops something went wrong when creating the draft, please try again' />)
     )
 }
