@@ -1,4 +1,4 @@
-import './globals.scss';
+import './resources/style/globals.scss';
 
 import {
   ClerkProvider,
